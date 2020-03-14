@@ -8,6 +8,7 @@
 
             :dependencies [[org.clojure/clojure "1.10.0"]
                            [rum "0.11.4"]
+                           [metosin/reitit "0.4.2"]
                            [org.clojure/clojurescript "1.10.520"]
                            [org.clojure/core.async  "0.4.500"]]
 
