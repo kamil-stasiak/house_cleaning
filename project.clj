@@ -7,10 +7,11 @@
             :min-lein-version "2.9.1"
 
             :dependencies [[org.clojure/clojure "1.10.0"]
+                           [org.clojure/clojurescript "1.10.597"]
+                           [org.clojure/core.async  "0.4.500"]
                            [rum "0.11.4"]
-                           [metosin/reitit "0.4.2"]
-                           [org.clojure/clojurescript "1.10.520"]
-                           [org.clojure/core.async  "0.4.500"]]
+                           [datascript "0.18.10"]
+                           [metosin/reitit "0.4.2"]]
 
             :plugins [[lein-figwheel "0.5.19"]
                       [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]

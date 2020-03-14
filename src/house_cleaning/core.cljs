@@ -18,9 +18,18 @@
 (rum/defc dashboard-page []
           [:div
            [:h1 "Dashboard"]])
+
+(rum/defc index-page []
+          [:div
+           [:h1 "Index"]])
 ;
+
 (def routes
-  [["/admin"
+  [["/"
+    {:name ::index
+     :view index-page}]
+
+   ["/admin"
     {:name ::admin
      :view admin-page}]
 
@@ -46,10 +55,9 @@
            [:ul
             [:li [:a {:href (rfe/href ::admin)} "Admin"]]
             [:li [:a {:href (rfe/href ::dashboard)} "Dashboard"]]]
-           (if @url
-             (let [view (:view (:data (rum/react url)))]
-               (view)))])
-           ; [:pre (with-out-str (fedn/pprint (get-in @url [:data :view])))]])
+           (if-let [view (get-in (rum/atom url) [:view :data])]
+             (view))])
+           ; [:pre (with-out-str (fedn/pprint (get-in (rum/react url) [:data :view])))]])
 
 ;
 
