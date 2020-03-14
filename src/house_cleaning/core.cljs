@@ -4,7 +4,17 @@
             [reitit.frontend.easy :as rfe]
             [reitit.coercion.spec :as rss]
             [spec-tools.data-spec :as ds]
-            [fipp.edn :as fedn]))
+            [fipp.edn :as fedn]
+            [mount.core :as mount]))
+
+; mount
+
+(mount/in-cljc-mode)
+
+(mount/defstate mount-test
+                :start (println "Starting")
+                :stop (println "Stopping"))
+; mount - end
 
 (enable-console-print!)
 
@@ -22,7 +32,6 @@
 (rum/defc index-page []
           [:div
            [:h1 "Index"]])
-
 ;
 
 (def routes

@@ -9,6 +9,7 @@
             :dependencies [[org.clojure/clojure "1.10.0"]
                            [org.clojure/clojurescript "1.10.597"]
                            [org.clojure/core.async  "0.4.500"]
+                           [mount "0.1.16"]
                            [rum "0.11.4"]
                            [datascript "0.18.10"]
                            [metosin/reitit "0.4.2"]]
@@ -30,7 +31,7 @@
                            ;; in the default browser once Figwheel has
                            ;; started and compiled your application.
                            ;; Comment this out once it no longer serves you.
-                                     :open-urls ["http://localhost:3449/index.html"]}
+                                     :open-urls ["http://localhost:3449"]}
 
                           :compiler {:main house-cleaning.core
                                      :asset-path "js/compiled/out"
@@ -57,7 +58,7 @@
                        :css-dirs ["resources/public/css"]} ;; watch and update CSS
 
              ;; Start an nREPL server into the running figwheel process
-             ;; :nrepl-port 7888
+            :nrepl-port 7888
 
              ;; Server Ring Handler (optional)
              ;; if you want to embed a ring handler into the figwheel http-kit
